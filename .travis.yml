@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.2.3
 before_install: gem install bundler -v 1.10.6
-install: bundle install --without development --deployment --jobs=3
+install: bundle install --without development --jobs=3
 cache:
   directories:
    - vendor/bundle
