@@ -1,18 +1,27 @@
 # Combination::Extractor
 
-  Exctract keyed patterns hash to combination keyed hash.
+Exctract keyed patterns hash to combination keyed hash.
 
-  Convert this hash:
+Convert this hash:
 
-  ```ruby
-  {fruit: ['apple', 'orange'], city: ['NewYork', 'London', 'Tokyo']}
-  ```
+```ruby
+{
+  fruit: ['apple', 'orange'],
+  city: ['NewYork', 'London', 'Tokyo']
+}
+```
 
-  To this:
-  ```ruby
-  [{:fruit=>"apple", :city=>"NewYork"}, {:fruit=>"apple", :city=>"London"}, {:fruit=>"apple", :city=>"Tokyo"},
-      {:fruit=>"orange", :city=>"NewYork"}, {:fruit=>"orange", :city=>"London"}, {:fruit=>"orange", :city=>"Tokyo"}]
-  ```
+To this:
+```ruby
+[
+  {:fruit=>"apple", :city=>"NewYork"},
+  {:fruit=>"apple", :city=>"London"},
+  {:fruit=>"apple", :city=>"Tokyo"},
+  {:fruit=>"orange", :city=>"NewYork"},
+  {:fruit=>"orange", :city=>"London"},
+  {:fruit=>"orange", :city=>"Tokyo"}
+]
+```
 
 ## Installation
 
