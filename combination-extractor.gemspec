@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Extract array to combination hash list.'
   spec.description   = 'Extract patterns array to hash list for combination.'
   spec.homepage      = 'https://github.com/akiroom/combination-extractor'
-  spec.license       = 'MIT'
+  spec.license       = ['MIT']
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
