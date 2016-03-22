@@ -1,8 +1,18 @@
 # Combination::Extractor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/combination/extractor`. To experiment with that code, run `bin/console` for an interactive prompt.
+  Exctract keyed patterns hash to combination keyed hash.
 
-TODO: Delete this and the text above, and describe your gem
+  Convert this hash:
+
+  ```ruby
+  {fruit: ['apple', 'orange'], city: ['NewYork', 'London', 'Tokyo']}
+  ```
+
+  To this:
+  ```ruby
+  [{:fruit=>"apple", :city=>"NewYork"}, {:fruit=>"apple", :city=>"London"}, {:fruit=>"apple", :city=>"Tokyo"},
+      {:fruit=>"orange", :city=>"NewYork"}, {:fruit=>"orange", :city=>"London"}, {:fruit=>"orange", :city=>"Tokyo"}]
+  ```
 
 ## Installation
 
@@ -22,7 +32,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+CombinationExtractor.extract({fruit: ['apple', 'orange'], city: ['NewYork', 'London', 'Tokyo']})
+=> [{:fruit=>"apple", :city=>"NewYork"}, {:fruit=>"apple", :city=>"London"}, {:fruit=>"apple", :city=>"Tokyo"},
+    {:fruit=>"orange", :city=>"NewYork"}, {:fruit=>"orange", :city=>"London"}, {:fruit=>"orange", :city=>"Tokyo"}]
+```
 
 ## Development
 
@@ -32,7 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/combination-extractor.
+Bug reports and pull requests are welcome on GitHub at https://github.com/akiroom/combination-extractor.
 
 
 ## License
