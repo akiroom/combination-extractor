@@ -41,13 +41,15 @@ Or install it yourself as:
 
 ## Usage
 
+**Example**
+
 ```ruby
 CombinationExtractor.extract({fruit: ['apple', 'orange'], city: ['NewYork', 'London', 'Tokyo']})
 => [{:fruit=>"apple", :city=>"NewYork"}, {:fruit=>"apple", :city=>"London"}, {:fruit=>"apple", :city=>"Tokyo"},
     {:fruit=>"orange", :city=>"NewYork"}, {:fruit=>"orange", :city=>"London"}, {:fruit=>"orange", :city=>"Tokyo"}]
 ```
 
-### Example for rspec
+**Example for rspec**
 
 ```ruby
 def example_similar_to(user_hash)
@@ -56,7 +58,6 @@ def example_similar_to(user_hash)
 end
 
 describe 'About example example_similar_to method' do
-
   let(:nickname) { nil }
   let(:gender) { nil }
   let(:birthday) { nil }
