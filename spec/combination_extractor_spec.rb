@@ -39,16 +39,17 @@ describe CombinationExtractor do
     end
 
     context 'in RSpec example' do
-      describe 'About example user_similar_to_john method' do
+      def example_similar_to(user_hash)
+        user_hash[:birthday] == Time.new(1988, 12, 30) &&
+          user_hash[:gender] == :male
+      end
+
+      describe 'About example example_similar_to method' do
+
         let(:nickname) { nil }
         let(:gender) { nil }
         let(:birthday) { nil }
         let(:user) { { nickname: nickname, gender: gender, birthday: birthday } }
-
-        def user_similar_to_john(user_hash)
-          user_hash[:birthday] == Time.new(1988, 12, 30) &&
-            gender == :male
-        end
 
         user_condition = {
           nickname: ['John', 'Ken', 'Jessie'],
@@ -59,21 +60,13 @@ describe CombinationExtractor do
         pattern_list = CombinationExtractor.extract(user_condition)
 
         pattern_list.each do |pattern|
-          title = pattern.map { |k, v| "#{k}=#{v}" }.join(', ')
-          describe "with user who is (#{title})" do
-            # Set pattern to lazy evaluated variable
+          describe "user who is #{pattern.to_s}" do
+            # NOTE: Set pattern to lazy evaluated variable
             pattern.each { |key, value| let(key) { value } }
 
             should_value = pattern[:gender] == :male && pattern[:birthday] == Time.new(1988, 12, 30)
-
             it "should return #{should_value}" do
-              if should_value == true
-                # Evaluate truthy pattern
-                expect(user_similar_to_john(user)).to be_truthy
-              else
-                # Evaluate falsey pattern
-                expect(user_similar_to_john(user)).to be_falsey
-              end
+              expect(example_similar_to(user)).to eq(should_value)
             end
           end
         end
