@@ -1,4 +1,4 @@
-# Combination::Extractor
+# CombinationExtractor
 
 Exctract keyed patterns hash to combination keyed hash.
 
