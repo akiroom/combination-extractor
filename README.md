@@ -1,5 +1,7 @@
 # CombinationExtractor
 
+[![Build Status](https://travis-ci.org/akiroom/combination-extractor.svg?branch=master)](https://travis-ci.org/akiroom/combination-extractor)
+
 Exctract keyed patterns hash to combination keyed hash.
 
 Convert this hash:
