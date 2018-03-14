@@ -1,6 +1,6 @@
 
 module CombinationExtractor
-  VERSION = '0.9.1'.freeze
+  VERSION = '0.9.2'.freeze
 
   # Exctract keyed patterns hash to combination keyed hash.
   # @param key_to_pattern key: title for values, value: [Array] various value to use making combination.
