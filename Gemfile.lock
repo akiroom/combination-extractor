@@ -45,7 +45,7 @@ DEPENDENCIES
   combination-extractor!
   rake (~> 10.0)
   rspec (~> 3.4)
-  rubocop
+  rubocop (~> 0.53)
 
 BUNDLED WITH
    1.16.1
